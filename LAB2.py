@@ -80,3 +80,41 @@ nuevo_registro_ev = {
 df_ev = pd.concat([df_ev, pd.DataFrame([nuevo_registro_ev])], ignore_index=True)
 print(f"\n  Registro añadido. Total de vehículos ahora: {len(df_ev):,}")
  
+print("\n  Ingrese los datos de la nueva sesión de gimnasio:")
+ 
+nueva_edad        = int(input("    Edad: "))
+nuevo_genero      = input("    Género (Male/Female): ").strip()
+nuevo_peso        = float(input("    Peso (kg): "))
+nueva_altura      = float(input("    Altura (m): "))
+nuevo_max_bpm     = int(input("    BPM máximo: "))
+nuevo_avg_bpm     = int(input("    BPM promedio: "))
+nuevo_rest_bpm    = int(input("    BPM en reposo: "))
+nueva_duracion    = float(input("    Duración de sesión (horas): "))
+nuevas_calorias   = float(input("    Calorías quemadas: "))
+nuevo_tipo_ej     = input("    Tipo de ejercicio (Yoga/HIIT/Cardio/Strength): ").strip()
+nuevo_grasa       = float(input("    Porcentaje de grasa corporal: "))
+nuevo_agua        = float(input("    Ingesta de agua (litros): "))
+nueva_frecuencia  = int(input("    Frecuencia de entrenamiento (días/semana): "))
+nuevo_nivel       = int(input("    Nivel de experiencia (1/2/3): "))
+nuevo_bmi         = float(input("    IMC: "))
+ 
+nuevo_registro_gym = {
+    "Age":                          nueva_edad,
+    "Gender":                       nuevo_genero,
+    "Weight (kg)":                  nuevo_peso,
+    "Height (m)":                   nueva_altura,
+    "Max_BPM":                      nuevo_max_bpm,
+    "Avg_BPM":                      nuevo_avg_bpm,
+    "Resting_BPM":                  nuevo_rest_bpm,
+    "Session_Duration (hours)":     nueva_duracion,
+    "Calories_Burned":              nuevas_calorias,
+    "Workout_Type":                 nuevo_tipo_ej,
+    "Fat_Percentage":               nuevo_grasa,
+    "Water_Intake (liters)":        nuevo_agua,
+    "Workout_Frequency (days/week)": nueva_frecuencia,
+    "Experience_Level":             nuevo_nivel,
+    "BMI":                          nuevo_bmi,
+}
+ 
+df_gym = pd.concat([df_gym, pd.DataFrame([nuevo_registro_gym])], ignore_index=True)
+print(f"\n  Registro añadido. Total de sesiones ahora: {len(df_gym):,}")
