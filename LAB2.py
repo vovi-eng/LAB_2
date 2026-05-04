@@ -46,4 +46,37 @@ explorar_dataset("Vehículos Eléctricos", df_ev)
 explorar_dataset("Seguimiento de Gimnasio", df_gym)
 explorar_dataset("Steam Store 2024",       df_steam)
 explorar_dataset("Netflix Títulos",        df_netflix)
+print("\n" + "=" * 60)
+print("  SECCIÓN 2 – INGRESO DE NUEVOS DATOS")
+print("=" * 60)
+ 
+
+print("\n  Ingrese los datos del nuevo vehículo eléctrico:")
+ 
+nuevo_vin       = input("    VIN (primeros 10 caracteres): ").strip()
+nueva_ciudad    = input("    Ciudad: ").strip()
+nuevo_anio      = int(input("    Año del modelo (2000-2025): "))
+nueva_marca     = input("    Marca (Make): ").strip().upper()
+nuevo_modelo    = input("    Modelo: ").strip().upper()
+nuevo_tipo_ev   = input("    Tipo EV (Battery Electric Vehicle (BEV) / Plug-in Hybrid Electric Vehicle (PHEV)): ").strip()
+nueva_elegib    = input("    Elegibilidad CAFV: ").strip()
+nuevo_rango     = int(input("    Rango eléctrico (millas): "))
+nuevo_msrp      = int(input("    Precio base MSRP ($): "))
+nueva_utilidad  = input("    Empresa de electricidad: ").strip()
+ 
+nuevo_registro_ev = {
+    "VIN (1-10)":            nuevo_vin,
+    "City":                  nueva_ciudad,
+    "Model Year":            nuevo_anio,
+    "Make":                  nueva_marca,
+    "Model":                 nuevo_modelo,
+    "Electric_Vehicle_Type": nuevo_tipo_ev,
+    "CAFV_Eligibility":      nueva_elegib,
+    "Electric_Range":        nuevo_rango,
+    "Base_MSRP":             nuevo_msrp,
+    "Electric Utility":      nueva_utilidad,
+}
+ 
+df_ev = pd.concat([df_ev, pd.DataFrame([nuevo_registro_ev])], ignore_index=True)
+print(f"\n  Registro añadido. Total de vehículos ahora: {len(df_ev):,}")
  
